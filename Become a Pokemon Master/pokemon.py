@@ -239,6 +239,10 @@ class Bulbasaur(Pokemon):
     def __init__(self, level = 5):
         super().__init__("Bulbasaur", "Grass", level)
 
+class Venusaur(Pokemon):
+    def __init__(self, level = 5):
+        super.__init__("Venusaur", "Grass", level)
+
 
 # Ice Pokemon subclasses
 class Cloyster(Pokemon):
@@ -393,7 +397,7 @@ This is a 2-player game where you can play with anyone else you want (he/she wou
 You and your enemy would play as pokemon trainers.
 By default, pokemons, names and number of potions are assigned to you and your enemy but you can change them above.
 
-A total of 14 pokemons have been used in this game, which are of 5 types
+A total of 15 pokemons have been used in this game, which are of 5 types
 Fire, Water, Grass, Electric and Ice.
 Pokemons have different level and they evolve when they attain full health.
 You can do the following tasks:- 
@@ -401,14 +405,14 @@ You can do the following tasks:-
 2) Use a potion to heal, revive or evolve your current active pokemon
 3) Switch your current active pokemon.
 
-As per default values trainer1 (named 'Alex') has 8 pokemons and trainer2 (named 'Sarah') has 6 pokemons.
+As per default values trainer1 (named 'Alex') has 8 pokemons and trainer2 (named 'Sarah') has 7 pokemons.
 When switching a pokemon you must ensure that you enter a valid index for next pokemon, else it wont change.
 (Indexes begin from 0. For eg, by default valid indexes for trainer1 would be from 0 to 7 (and not 8).)
 
 RULE IS SIMPLE:
 The first one to have 0 potions left or all pokemons knocked out is the loser.
 
-(P.S. by default both trainer have 15 potions each.)
+(P.S. by default both trainer have 20 potions each.)
 
 Let the Battle Begin!!!
 
@@ -429,6 +433,7 @@ def reset():
     golem = Golem(11)
     toxtricity = Toxtricity(4)
     bulbasaur = Bulbasaur(3)
+    venusaur = Venusaur(6)
     cloyster = Cloyster()
     jynx = Jynx(7)
     vulpix = Vulpix(15)
@@ -436,24 +441,26 @@ def reset():
     glaceon = Glaceon(9)
 
     trainer_one = Trainer([
-        mega_charizard_x,
-        pikachu,
+        mega_charizard_y,
+        glaceon,
         charmander,
-        lapras,
         toxtricity,
         wartortle,
-        cloyster,
+        golem,
+        venusaur,
         jynx
-    ], 15, "Alex")
+    ], 20, "Alex")
 
+    # Trainer 2 object
     trainer_two = Trainer([
         mega_charizard_y,
         blastoise,
-        glaceon,
+        pikachu,
         vulpix,
         bulbasaur,
-        golem
-    ], 15, "Sarah")
+        cloyster,
+        lapras
+    ], 20, "Sarah")
 
 
 
@@ -475,36 +482,37 @@ toxtricity = Toxtricity(4)
 
 # Grass pokemon object
 bulbasaur = Bulbasaur(3)
+venusaur = Venusaur(6)
 
 # Ice pokemon objects
 cloyster = Cloyster()
 jynx = Jynx(7)
 vulpix = Vulpix(15)
-lapras = Lapras(6)
 glaceon = Glaceon(9)
 
 
 # Trainer 1 object
 trainer_one = Trainer([
-    mega_charizard_x,
-    pikachu,
+    mega_charizard_y,
+    glaceon,
     charmander,
-    lapras,
     toxtricity,
     wartortle,
-    cloyster,
+    golem,
+    venusaur,
     jynx
-], 15, "Alex")
+], 20, "Alex")
 
 # Trainer 2 object
 trainer_two = Trainer([
     mega_charizard_y,
     blastoise,
-    glaceon,
+    pikachu,
     vulpix,
     bulbasaur,
-    golem
-], 15, "Sarah")
+    cloyster,
+    lapras
+], 20, "Sarah")
 
 
 ### Main Game
